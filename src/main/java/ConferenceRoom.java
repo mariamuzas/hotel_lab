@@ -28,4 +28,10 @@ public class ConferenceRoom {
         this.guests.add(guest);
         }
     }
+
+    public void removeGuest(Guest guest) {
+    if (this.guests.contains(guest)) {
+        this.guests.remove(guest);
+        }
+    }
 }

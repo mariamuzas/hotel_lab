@@ -27,4 +27,5 @@ public class ConferenceRoomTest {
         conferenceRoom.addGuest(guest);
         assertEquals(1, conferenceRoom.guestsCount());
     }
+    
 }
