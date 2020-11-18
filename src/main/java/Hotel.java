@@ -50,7 +50,4 @@ public class Hotel {
     public int getBookingCount() {
         return this.bookings.size();
     }
-//    Create a bookRoom method in your Hotel.
-//    This should book a given Bedroom for a number of nights.
-//    This should return a new Bookin object.
 }

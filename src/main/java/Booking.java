@@ -15,4 +15,8 @@ public class Booking {
     public Bedroom getBedroom() {
         return bedroom;
     }
+
+    public double getBill() {
+        return getNightsBooked() * bedroom.getRate();
+    }
 }

@@ -13,7 +13,7 @@ public class HotelTest {
 
     @Before
     public void setUp() {
-        bedroom = new Bedroom(25,4, "Double");
+        bedroom = new Bedroom(25,4, "Double", 89.50);
         conferenceRoom = new ConferenceRoom("Board Room", 10);
         hotel = new Hotel();
         guest = new Guest("Bob");
