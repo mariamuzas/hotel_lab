@@ -18,7 +18,14 @@ public class ConferenceRoom {
     public String getName() {
         return name;
     }
-    public int getGuestsNum() {
+
+    public int guestsCount() {
         return guests.size();
+    }
+
+    public void addGuest(Guest guest) {
+    if (getCapacity() > guestsCount()) {
+        this.guests.add(guest);
+        }
     }
 }

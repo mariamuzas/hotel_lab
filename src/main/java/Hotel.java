@@ -24,4 +24,10 @@ public class Hotel {
     public int numConferenceRooms() {
     return this.conferenceRooms.size();
     }
+
+//    hotel has room
+//    hotel checks in a guest in the room
+//    bedroom.addguest()
+//    the room has one guest int the ArrayList
+//    The Hotel will be able check guests in/out of rooms.
 }

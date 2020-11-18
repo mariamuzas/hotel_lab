@@ -10,7 +10,7 @@ public class BedroomTest {
 
     @Before
     public void setUp() {
-        bedroom = new Bedroom(25,4, "Double");
+        bedroom = new Bedroom(25, 4, "Double");
         guest = new Guest("Jane");
     }
 
@@ -27,5 +27,11 @@ public class BedroomTest {
     @Test
     public void roomHasType() {
     assertEquals("Double", bedroom.getType());
+    }
+
+    @Test
+    public void bedroomCanAddGuest() {
+        bedroom.addGuest(guest);
+        assertEquals(1, bedroom.guestsCount());
     }
 }

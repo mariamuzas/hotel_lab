@@ -25,7 +25,13 @@ public class Bedroom {
     public String getType() {
         return type;
     }
-    public int getGuestsNum() {
-        return guests.size();   
+    public int guestsCount() {
+        return guests.size();
+    }
+
+    public void addGuest(Guest guest) {
+        if (getCapacity() > guestsCount()){
+            this.guests.add(guest);
+        }
     }
 }
