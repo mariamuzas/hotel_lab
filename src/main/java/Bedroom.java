@@ -7,7 +7,7 @@ public class Bedroom {
     private ArrayList<Guest> guests;
     private String type;
 
-    public Bedroom(int roomNumber, int capacity,     String type) {
+    public Bedroom(int roomNumber, int capacity, String type) {
         this.roomNumber = roomNumber;
         this.capacity = capacity;
         this.guests = new ArrayList<>();
