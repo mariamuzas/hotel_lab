@@ -60,4 +60,10 @@ public class HotelTest {
         assertEquals(2, bedroom.guestsCount());
     }
 
+    @Test
+    public void canCreateBooking() {
+        hotel.bookRoom(bedroom, 4);
+        assertEquals(1, hotel.getBookingCount());
+    }
+
 }

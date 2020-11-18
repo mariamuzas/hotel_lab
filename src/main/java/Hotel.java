@@ -3,10 +3,12 @@ import java.util.ArrayList;
 public class Hotel {
     private ArrayList<Bedroom> bedrooms;
     private ArrayList<ConferenceRoom> conferenceRooms;
+    private ArrayList<Booking> bookings;
 
     public Hotel() {
         this.bedrooms = new ArrayList<>();
         this.conferenceRooms = new ArrayList<>();
+        this.bookings = new ArrayList<>();
     }
 
     public void addBedroom(Bedroom bedroom){
@@ -38,10 +40,17 @@ public class Hotel {
     public void checkOutGuestBedroom(Guest guest, Bedroom bedroom) {
         bedroom.removeGuest(guest);
     }
-    
-//    hotel has room
-//    hotel checks in a guest in the room
-//    bedroom.addGuest()
-//    the room has one guest int the ArrayList
-//    The Hotel will be able check guests in/out of rooms.
+
+    public Booking bookRoom(Bedroom bedroom, int nights) {
+        Booking newBooking = new Booking(bedroom, nights);
+        this.bookings.add(newBooking);
+        return newBooking;
+    }
+
+    public int getBookingCount() {
+        return this.bookings.size();
+    }
+//    Create a bookRoom method in your Hotel.
+//    This should book a given Bedroom for a number of nights.
+//    This should return a new Bookin object.
 }
