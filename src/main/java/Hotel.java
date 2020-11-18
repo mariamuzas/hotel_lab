@@ -1,14 +1,18 @@
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
 
 public class Hotel {
     private ArrayList<Bedroom> bedrooms;
     private ArrayList<ConferenceRoom> conferenceRooms;
     private ArrayList<Booking> bookings;
+    private HashMap<String, DiningRoom> diningRooms;
 
     public Hotel() {
         this.bedrooms = new ArrayList<>();
         this.conferenceRooms = new ArrayList<>();
         this.bookings = new ArrayList<>();
+        this.diningRooms = new HashMap<>();
     }
 
     public void addBedroom(Bedroom bedroom){
@@ -50,4 +54,30 @@ public class Hotel {
     public int getBookingCount() {
         return this.bookings.size();
     }
+
+    public void addToDiningRoomHashMap(DiningRoom diningRoom){
+        String name = diningRoom.getName();
+        this.diningRooms.put(name, diningRoom);
+    }
+
+    public boolean getKeyOfDiningRoom(DiningRoom diningRoom){
+        return this.diningRooms.containsKey(diningRoom.getName());
+    }
+
+    public int getDiningRoomList() {
+        return this.diningRooms.size();
+    }
+
+    public HashMap<String, DiningRoom> getDiningRooms() {
+        return diningRooms;
+    }
+
+//    public Collection<String> getDiningRoomsKey() {
+//        return this.diningRooms.keySet();
+//    }
+
+    //    Hotel will have a HashMap based collection of DiningRooms.
+//            Hint ^
+//    HashMap<String, DiningRoom>
+//    The String here could be from calling .getName() on the instance of DiningRoom
 }

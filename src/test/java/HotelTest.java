@@ -2,6 +2,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class HotelTest {
     Bedroom bedroom;
@@ -10,6 +11,8 @@ public class HotelTest {
     Guest guest;
     Guest guest1;
     Guest guest2;
+    DiningRoom diningRoom;
+    DiningRoom diningRoom1;
 
     @Before
     public void setUp() {
@@ -19,6 +22,8 @@ public class HotelTest {
         guest = new Guest("Bob");
         guest1 = new Guest("Mat");
         guest2 = new Guest("Mery");
+        diningRoom = new DiningRoom("Fancy Food");
+        diningRoom1 = new DiningRoom("Breakfast Room");
     }
 
     @Test
@@ -65,5 +70,27 @@ public class HotelTest {
         hotel.bookRoom(bedroom, 4);
         assertEquals(1, hotel.getBookingCount());
     }
+
+    @Test
+    public void canAddDiningRoom() {
+        hotel.addToDiningRoomHashMap(diningRoom);
+        hotel.addToDiningRoomHashMap(diningRoom1);
+        assertEquals(2, hotel.getDiningRoomList());
+    }
+
+    @Test
+    public void getKeysOfDiningRooms() {
+        hotel.addToDiningRoomHashMap(diningRoom);
+        hotel.addToDiningRoomHashMap(diningRoom1);
+        assertTrue(hotel.getKeyOfDiningRoom(diningRoom));
+    }
+
+//    @Test
+//    public void checkDiningRoomsKeys() {
+//        hotel.addToDiningRoomHashMap(diningRoom);
+//        hotel.addToDiningRoomHashMap(diningRoom1);
+//        assertEquals("[Breakfast Room, Fancy Food]", hotel.getDiningRoomsKey());
+//    }
+
 
 }
